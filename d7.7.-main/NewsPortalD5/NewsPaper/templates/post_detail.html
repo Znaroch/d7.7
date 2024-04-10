@@ -1,0 +1,25 @@
+{% extends 'flatpages/default.html' %}
+
+
+{% load custom_filters %}!
+{% block content %}
+
+<table>
+    <tr>
+        <td>Заголовок</td>
+        <td>Содержание</td>
+        <td>Дата публикации</td>
+
+    </tr>
+
+    <tr>
+        <td>{{ post.title | wordchange }}</td>
+        <td>{{ post.text | wordchange }}</td>
+        <td>{{ post.created_at|date:'d M Y' }}</td>
+
+    </tr>
+
+</table>
+
+{{ posts }}
+{% endblock content %}
